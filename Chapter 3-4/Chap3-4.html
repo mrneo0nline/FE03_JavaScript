@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- CSS used -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- End CSS including -->
+
+	<!-- JS used -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<!-- End JS including -->
+
+	<title>FE03 - JS | Chapters 3 - 4</title>
+	<script>
+		var $ = function (id) {
+			return document.getElementById(id);
+		}
+	</script>
+</head>
+
+<body>
+	<div class="container w-50 my-3">
+		<!-- <div class="row mt-3 py-2 bg-info text-light rounded"> -->
+		<!-- <div id="ex1" class="card pl-2 py-3 my-4 bg-success text-light rounded border-dark">
+			<script>
+				var practice1 =
+					"<p><u>Ex1:</u> Create two integer variables (a and b) after that assign value for them.<br>Then swap value of a and b.<hr></p>";
+				// var a = prompt("Input number a:");
+				// var b = prompt("Input number b:");
+				var a = 12,
+					b = 34;
+				var c;
+				$("ex1").innerHTML = practice1 + "<p>" + "<b><u>You inputted:</u></b> a = " + a + ", b = " + b + "</p>";
+				c = a;
+				a = b;
+				b = c;
+				$("ex1").innerHTML += "<p>" + "Swapped: a = " + a + "<br>" + "Swapped: b = " + b + "</p>";
+			</script>
+		</div> -->
+
+		<!-- <div id="ex2" class="card pl-2 py-3 my-4 bg-success text-light rounded border-dark">
+			<script>
+				var practice2 =
+					"<p><u>Ex2:</u> Write a program to input three numbers as math, physics, and chemistry.<br>Output average and rank according to the following:<br>AVG | Rank<br>>=8.0 | Ranked A<br>>= 6.5 | Ranked B<br>>= 5.0 | Ranked C<br>< 5.0 | Ranked D <hr> </p>";
+				var mathNumb = prompt("Input your Math score in format X.XX: ");
+				var physNumb = prompt("Input your physics score in format X.XX: ");
+				var chemNumb = prompt("Input your chemistry score in format X.XX: ");
+				var rank = "You got rank: ";
+				var a = parseInt(mathNumb),
+					b = parseInt(physNumb),
+					c = parseInt(chemNumb);
+				var average = (a + b + c) / 3;
+				var yourScore = "<p>Your scores inputted:<br>- Math: " + a + "<br>- Physics: " + b + "<br>- Chemistry: " + c +
+					"<br> Average: " + average + "<br><br>You got rank: ";
+
+				if (average >= 8.0) {
+					$("ex2").innerHTML = practice2 + yourScore + "<h2>A</h2> </p>";
+				} else if (average >= 6.5) {
+					$("ex2").innerHTML = practice2 + yourScore + "<h2>B</h2> </p>";
+				} else if (average >= 5.0) {
+					$("ex2").innerHTML = practice2 + yourScore + "<h2>C</h2> </p>";
+				} else {
+					$("ex2").innerHTML = practice2 + yourScore + "<h2>D</h2> </p>";
+				}
+			</script>
+		</div> -->
+
+		<!-- <div id="ex3" class="card pl-2 py-3 my-4 bg-success text-light rounded border-dark">
+			<script>
+				var practice3 =
+					"<p><u>Ex3:</u> Write a program to find x from ax + b =0 equation with a and b are input from keyboards.</p>";
+				var numA = prompt("Input Number \"a\": ");
+				var numB = prompt("Input Number \"b\": ");
+				var a = parseInt(numA),
+					b = parseInt(numB),
+					x = -b / a;
+				var result = "X = -" + b + "/" + a + " = ";
+				var endResult = "<p>You inputted:<br>&rarr;&nbsp;a = " + a + "<br>&rarr;&nbsp;b = " + b +
+					"<br><br> Equatation: \"ax + b = 0\" " + "<br><br>Result: " + result + x + "</p>";
+				$("ex3").innerHTML = endResult;
+			</script>
+		</div> -->
+
+		<!-- <div id="ex4" class="card pl-2 py-3 my-4 bg-success text-light rounded border-dark">
+			<script>
+				var practice4 =
+					"<p><u>Ex4:</u> Write a program to find x from ax&sup2; + bx + c = 0 equation with a, b and c are input from keyboards.</p>";
+				var numA = prompt("Input Number \"a\": ");
+				var numB = prompt("Input Number \"b\": ");
+				var numC = prompt("Input Number \"c\": ");
+				var a = parseInt(numA),
+					b = parseInt(numB),
+					c = parseInt(numC);
+				var delt = Math.pow(b, 2) - 4*a*c;
+				var x1 = (-b + Math.sqrt(delt))/(2*a);
+				var x2 = (b + Math.sqrt(delt))/(2*a);
+				var xDual = -b/(2*a);
+				var delta = "b&sup2; - 4ac = " + b + "&sup2; - 4 x " + a + " x " + c +" = " + delt;
+				
+				var resNoSolution = "<p>You inputted:<br>&rarr;&nbsp;a = " + a + "<br>&rarr;&nbsp;b = " + b + "<br>&rarr;&nbsp;c = " + c +
+					"<br><br> Equatation: ax&sup2; + bx + c = 0" + "<br>Delta = " + delta + "<br><br>Result: Equatation has no solution!</p>";
+				var resTwoSolutions = "<p>You inputted:<br>&rarr;&nbsp;a = " + a + "<br>&rarr;&nbsp;b = " + b + "<br>&rarr;&nbsp;c = " + c +
+				"<br><br> Equatation: ax&sup2; + bx + c = 0" + "<br>Delta = " + delta + "<br><br>Result: Equatation has 2 solutions:<br><br>" + "&rarr;&nbsp; x1 = " + x1 + "<br>" + "&rarr;&nbsp; x2 = " + x2 + "</p>";
+				var resDualSolution = "<p>You inputted:<br>&rarr;&nbsp;a = " + a + "<br>&rarr;&nbsp;b = " + b + "<br>&rarr;&nbsp;c = " + c +
+				"<br><br> Equatation: ax&sup2; + bx + c = 0" + "<br>Delta = " + delta + "<br><br>Result: Equatation has dual solution: x = " + xDual + "</p>";
+
+					if(delt < 0){
+						$("ex4").innerHTML = practice4 + resNoSolution;
+					} else if(delt == 0){
+						$("ex4").innerHTML = practice4 + resDualSolution;
+					} else if(delt > 0){
+						$("ex4").innerHTML = practice4 + resTwoSolutions;
+					}
+			</script>
+		</div> -->
+
+		<!-- <div id="ex5" class="card pl-2 py-3 my-4 bg-success text-light rounded border-dark">
+				<script>
+					var practice5 =
+						"<p><u>Ex5:</u> Write a program to calculate sum of first 50 integer number.</p>";
+					var sum = 0;
+
+					for (var i = 0; i < 50; i++)
+					// for(var i = 1; i <= 50; i++)
+					{
+						sum += i;
+					}
+					var resultSum = "<p>Sum of first 50 integer numbers = 0 + 1 + 2 + ... + 49 = " + sum + "</p>";
+					// var resultSum = "<p>Sum of first 50 integer numbers = 1 + 2 + 3 + ... + 50 = " + sum + "</p>";
+					$("ex5").innerHTML = practice5 + resultSum;
+				</script>
+			</div> -->
+
+		<!-- <div id="ex6" class="card pl-2 py-3 my-4 bg-success text-light rounded border-dark">
+				<script>
+					var practice6 =
+						"<p><u>Ex6:</u> Write a program to print to screen first 20 numbers of Fibonacci numbers.</p>";
+					var fibonacciNumb = prompt("Input number n of Fibonacci numbers: ");
+					var fNumb = parseInt(fibonacciNumb);
+					var firstNumb = 0, secNumb = 1, nextNumbs, count = 2;
+					
+					console.log(firstNumb + ", " + secNumb + ", ");
+					while(count != fNumb){
+						nextNumbs = firstNumb + secNumb;
+						count++;
+						console.log(nextNumbs + ", ");
+						firstNumb = secNumb;
+						secNumb = nextNumbs;
+					}
+				</script>
+			</div> -->
+
+		<!-- <div id="ex7" class="card pl-2 py-3 my-4 bg-success text-light rounded border-dark">
+			<p><u>Ex7:</u> Create an application to manage student’s information as below:<br>- Create variables to save a
+				student’s information like: studentCode, studentName, studentAge, studentSex and set value for them.<br>- Print
+				student’s information to screen.<br>- Edit program to permit user inputs data from keyboard.<br>- Edit program to
+				permit user inputs a list of student from keyboard until “esc” key pressed ->> this is NOT COMPLETED</p>
+			<table id="ex71">
+			</table>
+			<script>
+				// var practice7 =
+				// 	"<p><u>Ex7:</u> Create an application to manage student’s information as below:<br>- Create variables to save a student’s information like: studentCode, studentName, studentAge, studentSex and set value for them.<br>- Print student’s information to screen.<br>- Edit program to permit user inputs data from keyboard.<br>- Edit program to permit user inputs a list of student from keyboard until “esc” key pressed.</p>";
+
+				/* function uniKeyCode(event) {
+					var key = event.keyCode;
+					if(key !== 27);
+				} */
+				var studentCode = prompt("Input student ID/ Code:");
+				var studentName = prompt("Input student Full name:");
+				var studentAge = prompt("Input student Age:");
+				var studentSex = prompt("Input student Gender:");
+				var studentInfo = "<tr> <th>Code</th> <th>Name</th> <th>Age</th> <th>Gender</th> </tr> <tr> <td>" + studentCode +
+					"</td> <td>" + studentName + "</td> <td>" + studentAge + "</td> <td>" + studentSex + "</td> </tr>";
+				$("ex71").innerHTML = studentInfo;
+
+				// $("ex71").innerHTML = studentInfo;
+			</script>
+		</div> -->
+
+		<!-- <div id="ex8" class="card pl-2 py-3 my-4 bg-success text-light rounded border-dark">
+			<script>
+				var practice8 =
+					"<p><u>Ex8:</u> Write a program to accepts a number n from 1 to 12 and then print number of days in month n of the current year. If user enter a number out of range an error message will display.</p>";
+				var n = prompt("Input number n with: 1 < n < 12");
+
+				while (n < 1 || n > 12) {
+					n = prompt("You've inputted wrong number, it must less than 12 and greater than 1 [1 < n < 12].\n Please reinput");
+				}
+				var x = parseInt(n);
+				var text;
+				switch (x) {
+
+					case 1:
+						text = "January = 31 days";
+						break;
+
+					case 2:
+						text = "February = 28 days";
+						break;
+					case 3:
+						text = "March = 31 days";
+						break;
+					case 4:
+						text = "April = 30 days";
+						break;
+					case 5:
+						text = "May = 31 days";
+						break;
+					case 6:
+						text = "June = 30 days";
+						break;
+					case 7:
+						text = "July = 31 days";
+						break;
+					case 8:
+						text = "August = 31 days";
+						break;
+					case 9:
+						text = "September = 30 days";
+						break;
+					case 10:
+						text = "October = 31 days";
+						break;
+					case 11:
+						text = "November = 30 days";
+						break;
+					case 12:
+						text = "December = 31 days";
+						break;
+					default:
+						text = "No value found";
+						break;
+				}
+				var resultEx8 = "You've inputted: " + x + "<br>Total days of month " + x + " = " + text;
+				$("ex8").innerHTML = practice8 + resultEx8;
+			</script>
+		</div> -->
+
+		<!-- <div id="ex9" class="card pl-2 py-3 my-4 bg-success text-light rounded border-dark">
+			<script>
+				var practice9 =
+					"<p><u>Ex9:</u> Write program to accepts two integer numbers (a and b), then calculate and display their greatest common divisor.</p>";
+				var x = prompt("Input first number:");
+				var y = prompt("Input second number:");
+				var iptNumbers = "You've inputted:<br>&rarr;&nbsp;&nbsp; First number: " + x +
+					"<br>&rarr;&nbsp;&nbsp; Second number: " + y;
+
+
+				function greatestCommonDivisor(x, y) {
+					x = parseInt(x);
+					y = parseInt(y);
+					var numb1 = x,
+						numb2 = y;
+					x = Math.abs(x);
+					y = Math.abs(y);
+					while (y) {
+						var t = y;
+						y = x % y;
+						x = t;
+					}
+					return "<br>&rarr;&nbsp;&nbsp;The greatest common divisor of " + numb1 + " and " + numb2 + " = " + x;
+				}
+				$("ex9").innerHTML = practice9 + iptNumbers + greatestCommonDivisor(x, y);
+			</script>
+		</div> -->
+
+		<div id="ex10" class="card pl-2 py-3 my-4 bg-success text-light rounded border-dark">
+			<script>
+				var practice10 =
+					"<p><u>Ex10:</u> Write a program to accept an integer number and print the triangle.</p>";
+
+				var n = prompt("Input number of rows for your triangle:");
+				n = parseInt(n);
+				var x, y, z;
+				for (x = 0; x < n; x++)
+				{
+					for (y = 0; y <= x; ++y)
+					{
+						document.write("*");
+					}
+					document.write( "<br>");
+				}
+			</script>
+		</div>
+
+	</div>
+
+</body>
+
+</html>
