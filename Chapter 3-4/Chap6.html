@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <!-- CSS used -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- End CSS including -->
+
+      <!-- JS used -->
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+
+      <!-- End JS including -->
+
+      <title>FE03 - JS | Chapter 5</title>
+      <script>
+         var $ = function (id) {
+			return document.getElementById(id);
+		}
+	</script>
+   </head>
+
+   <body>
+      <div class="container w-50 my-3 pt-5 rounded div1">
+         <p> This is text A</p>
+         <p> This is text B</p>
+         <p> This is text C</p>
+         <p> This is text D</p>
+      </div>
+   
+      <script>
+         var child1 = document.getElementsByClassName("div1")[0].firstElementChild.style;
+         var child2 = document.getElementsByClassName("div1")[0].lastElementChild.style;
+         child1.color = "red";
+         child2.color = "blue";
+
+        
+      </script>
+   </body>
+
+</html>

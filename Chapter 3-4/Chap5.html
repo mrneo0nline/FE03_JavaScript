@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <!-- CSS used -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- End CSS including -->
+
+      <!-- JS used -->
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+
+      <!-- End JS including -->
+
+      <title>FE03 - JS | Chapter 5</title>
+      <script>
+         var $ = function (id) {
+			return document.getElementById(id);
+		}
+	</script>
+   </head>
+
+   <body>
+      <div class="container w-50 my-3 pt-5 rounded">
+
+            <form class="form-group text-right">
+               <div class="row">
+                  <div class="col-5 col-md-5">
+                     <label class="form-control border-0 mr-0 pr-0">Investment Amount:</label>
+                  </div>
+                  <div class="col-7 col-md-7">
+                     <input type="text" class="form-control w-75" id="invest">
+                  </div>
+               </div>
+               <div class="row">
+                     <div class="col-5 col-md-5">
+                     <label class="form-control border-0 mr-0 pr-0">Annual Interest Rate:</label>
+                  </div>
+                  <div class="col-7 col-md-7">
+                     <input type="text" class="form-control w-75" id="rate">
+                  </div>
+               </div>
+               <div class="row">
+                     <div class="col-5 col-md-5">
+                     <label class="form-control border-0 mr-0 pr-0">Number of Years:</label>
+                  </div>
+                  <div class="col-7 col-md-7">
+                     <input type="text" class="form-control w-75" id="yrs">
+                  </div>
+               </div>
+               <div class="row">
+                     <div class="col-5 col-md-5">
+                     <label class="form-control border-0 mr-0 pr-0">Future Value:</label>
+                  </div>
+                  <div class="col-7 col-md-7">
+                     <input type="text" disabled class="form-control w-75" id="future">
+                  </div>
+               </div>
+               <div class="row">
+                  <button class="btn btn-dark w-25 form-control mx-auto my-3" id="cclt">Calculate</button>
+               </div>
+         </div>
+         </form>
+      </div>
+
+      <script>
+         var calculateClick = function () {
+            var investment = parseFloat($("invest").value);
+            var annualRate = parseFloat($("rate").value);
+            var years = parseInt($("yrs").value);
+            if (isNaN(investment) || investment <= 0) {
+               alert("Investment must be a number and greater than zero.");
+               // break;
+            } else if (isNaN(annualRate) || annualRate <= 0) {
+               alert("Annual Interest Rate must be a number and greater than zero.");
+               // break;
+            } else if (isNaN(years) || years <= 0) {
+               alert("Years must be a number and greater than zero.");
+               // break;
+            } else {
+               for (i = 1; i <= years; i++) {
+                  investment += investment * annualRate / 100;
+               }
+               $("future").value = investment.toFixed();
+               return false;
+            }
+         }
+         window.onload = function () {
+            $("cclt").onclick = calculateClick;
+         }
+      </script>
+   </body>
+
+</html>
