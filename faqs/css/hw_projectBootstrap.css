@@ -1,0 +1,68 @@
+*{margin:0 ;padding:0;}
+h1,h2,h3,h4,h5,h6,ul,li,p{margin: 0;padding:0px;}
+li{list-style-type: none;float:left;}
+a{text-decoration: none;color:#000;}
+a:hover{text-decoration: none;}
+.row{margin:0px;padding:0px;}
+@font-face{
+	font-family:Lato-Bold;
+	src:url('../fonts/Lato-Bold.ttf') format('truetype');
+	}
+@font-face{
+	font-family:Lato-Light;
+	src:url('../fonts/Lato-Light.ttf') format('truetype');
+	}
+@font-face{
+	font-family:Lato-Regular;
+	src:url('../fonts/Lato-Regular.ttf') format('truetype');
+	}
+@font-face{
+	font-family:Lato-Italic;
+	src:url('../fonts/Lato-Italic.ttf') format('truetype');
+	}
+.bold{font-family: Lato-Bold;}
+.light{font-family: Lato-Light;}
+.regular{font-family: Lato-Regular;}
+.italic{font-family: Lato-Italic;}
+.white{color:white;}
+body{background:#000;}
+
+.main-container{
+	max-width: 1020px;
+}
+.menu a:hover{
+	background:#1bbc9b;
+	color:#fff;
+}
+.bg_img{
+	background: url('../images/b_ground.jpg') no-repeat;
+}
+.learnmore{
+	background-color: #1bbc9b;
+	font-size: 75%;
+}
+.blue_bg{
+	background-color: #1bbc9b;
+}
+.white_bg{
+	background-color: #fff;
+}
+/* section div{
+	padding:auto;
+	margin: auto;
+} */
+[name="form-left"] input{
+	float: left;
+	width: 42%;
+	margin-bottom: 20px;
+}
+.mail{
+	margin-left: 16%;
+}
+.rform, .lform{
+	margin: 0px auto;
+}
+.rform p{
+	margin: 8px auto;
+	font-size: 85%;
+}
