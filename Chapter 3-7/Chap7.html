@@ -1,50 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <!-- CSS used -->
-      <link rel="stylesheet" href="css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/swap.css">
-      <!-- End CSS including -->
+      <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <!-- CSS used -->
+            <link rel="stylesheet" href="css/bootstrap.min.css">
+            <link rel="stylesheet" href="css/swap.css">
+            <!-- End CSS including -->
 
-      <!-- JS used -->
-      <script src="js/jquery-3.3.1.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
+            <!-- JS used -->
+            <!-- <script src="js/jquery-3.3.1.min.js"></script>
+            <script src="js/popper.min.js"></script>
+            <script src="js/bootstrap.min.js"></script> -->
 
-      <!-- End JS including -->
+            <!-- End JS including -->
 
-      <title>Swap Images</title>
-      <script>
-         var $ = function (id) {
-            return document.getElementById(id);
-         }
-      </script>
-   </head>
+            <title>Swap Images</title>
+            <script>
+                  var $ = function (id) {
+                        return document.getElementById(id);
+                  }
 
-   <body class="mt-3">
-      <main>
-         <h1>Fishing Images</h1>
-         <p>Click on an image to enlarge.</p>
-         <ul id="image_list">
-            <li><a href="images/release.jpg" title="Catch and Release">
-                  <img src="thumbnails/release.jpg" alt=""></a></li>
-            <li><a href="images/deer.jpg" title="Deer at Play">
-                  <img src="thumbnails/deer.jpg" alt=""></a></li>
-            <li><a href="images/hero.jpg" title="The Big One!">
-                  <img src="thumbnails/hero.jpg" alt=""></a></li>
-            <li><a href="images/bison.jpg" title="Grazing Bison">
-                  <img src="thumbnails/bison.jpg" alt=""></a></li>
-         </ul>
-         <h2 id="caption">Catch and Release</h2>
-         <p><img id="main_image" src="images/release.jpg" alt=""></p>
-      </main>
-      <script>
-         "use strict";
-         window.onload = function () {
+            </script>
+      </head>
+
+      <body class="mt-3">
+            <main>
+                  <h1>Fishing Slide Show</h1>
+                  <!-- <p>Click on an image to enlarge.</p> -->
+                  <ul id="image_list">
+                        <li><a href="images/release.jpg" title="Catch and Release">
+                                    <img src="thumbnails/release.jpg" alt=""></a></li>
+                        <li><a href="images/deer.jpg" title="Deer at Play">
+                                    <img src="thumbnails/deer.jpg" alt=""></a></li>
+                        <li><a href="images/hero.jpg" title="The Big One!">
+                                    <img src="thumbnails/hero.jpg" alt=""></a></li>
+                        <li><a href="images/bison.jpg" title="Grazing Bison">
+                                    <img src="thumbnails/bison.jpg" alt=""></a></li>
+                  </ul>
+                  <!-- <h2 id="caption">Catch and Release</h2> -->
+                  <p><img id="image" src="images/release.jpg" alt="Catch and Release"></p>
+                  <h2 id="caption">Catch and Release</h2>
+            </main>
+            <script>
+                  /* "use strict";
+            window.onload = function () {
             var listNode = $("image_list"); // the ul element
             var captionNode = $("caption"); // the h2 element
             var imageNode = $("main_image"); // the main img element
@@ -81,9 +83,43 @@
 
             // set focus on first image link
             imageLinks[0].focus();
-         };
-      </script>
+         }; */
 
-   </body>
+            </script>
+            <script>
+                  "use strict";
+
+                  window.onload = function () {
+                        var listNode = $("image_list"); // the ul element
+                        var captionNode = $("caption"); // the h2 element for the caption
+                        var imageNode = $("image"); // the img element for the show
+
+                        var links = listNode.getElementsByTagName("a");
+                        // Process image links
+                        var i, linkNode, image;
+                        var imageCache = [];
+                        for (i = 0; i < links.length; i++) {
+                              linkNode = links[i];
+                              // Preload image and copy title properties
+                              image = new Image();
+                              image.src = linkNode.getAttribute("href");
+                              image.title = linkNode.getAttribute("title");
+                              imageCache[imageCache.length] = image;
+                        }
+                        // Start slide show
+                        var imageCounter = 0;
+                        var timer = setInterval(
+                              function () {
+                                    imageCounter = (imageCounter + 1) % imageCache.length;
+                                    image = imageCache[imageCounter];
+                                    imageNode.src = image.src;
+                                    captionNode.firstChild.nodeValue = image.title;
+                              },
+                              2000);
+                  };
+
+            </script>
+
+      </body>
 
 </html>
