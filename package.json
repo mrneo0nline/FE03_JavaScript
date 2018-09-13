@@ -1,0 +1,22 @@
+{
+  "name": "jqueries",
+  "version": "1.0.0",
+  "description": "jquery snippets",
+  "main": "yes",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrneo0nline/FE03_JavaScript.git"
+  },
+  "keywords": [
+    "jquery"
+  ],
+  "author": "quang le hong ky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrneo0nline/FE03_JavaScript/issues"
+  },
+  "homepage": "https://github.com/mrneo0nline/FE03_JavaScript#readme"
+}
