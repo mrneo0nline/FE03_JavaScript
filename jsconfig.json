@@ -1,7 +1,9 @@
 {
 	"exclude": ["node_modules"],
-"typeAcquisition": {
- "include": [
-	 "jquery"
- ]
+	"typeAcquisition": {
+		"include": [
+			"javascript",
+			"jquery"
+		]
+	}
 }

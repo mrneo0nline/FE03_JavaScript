@@ -20,5 +20,6 @@ $(document).ready(function() {
 		$(this).animate( { fontSize: "650%", opacity: 1, left: "+=375" }, 2000 )  
 			   .animate( { fontSize: "175%", left: "-=200" }, 1000 );
 	}); // end click
+	
     
 }); // end ready
