@@ -34,5 +34,5 @@ window.onload = function() {
 
     	linkElements[i].onclick = toggle;
     }
-    linkElements[0].focus();       
+    linkElements[0].focus();
 };

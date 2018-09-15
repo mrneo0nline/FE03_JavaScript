@@ -9,7 +9,7 @@ $(document).ready(function() {
                 $(this).next().show();
             }
 
-            $("#image").attr("src", "");   	
+            $("#image").attr("src", "");
         }
     ); // end click
 
