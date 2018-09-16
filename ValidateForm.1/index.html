@@ -14,6 +14,12 @@
         <script src="js/bootstrap.min.js"></script>
         <title>FE03 | Bai Tap On tap JS and jQuery</title>
         <style>
+            * {
+                font-family: "Century Gothic", "sans-serif", "Tahoma", "Verdana";
+            }
+            div[title="accordion"]{
+                margin: 13px 0;
+            }
             h3 {
                 padding: .25em 0px .25em 25px;
                 cursor: pointer;
@@ -23,10 +29,32 @@
                 background: url(assets/img/slider/minus.png) no-repeat left center;
             }
             div.tabs{
-                padding: 10px 10px;
-                margin: 0 10px;
-                border: 1px solid rgb(199, 199, 199);
-                background-color: rgb(199, 199, 199);
+                width: 100px;
+                text-align: center;
+                padding: 10px 0px;
+                border: 0;
+                cursor: pointer;
+                background-color: rgba(204, 204, 204, 0.397);
+            }
+            
+            div.tabs:hover, div.tabs.active:hover{
+                background-color: rgba(204, 204, 204, 0.692);
+            }
+            div.tabs.active{
+                background-color: #0d7efe;
+                color: white;
+            }
+            
+            div #tab2, div #tab3, div #tab4{
+                margin-left: 9px;
+            }
+            div.tabContent1, div.tabContent2, div.tabContent3, div.tabContent4 {
+                padding-left: 5px;
+                background-color: rgba(223, 223, 223, 0.199);
+            }
+            div.info{
+                color: white;
+                font-weight: lighter;
             }
         </style>
     </head>
@@ -38,7 +66,7 @@
                     <div class="container-fluid mt-2">
                         <div class="row">
                             <div class="col-md-12">
-                                <div id="carouselEx" class="carousel slide" data-ride="carousel">
+                                <div id="carouselEx" class="carousel slide" data-ride="carousel" style="background-size: cover">
                                     <div class="carousel-inner">
                                         <div class="carousel-item active" style="height: 160px">
                                             <img src="assets/img/slider/1.jpg" name="first-slide">
@@ -80,10 +108,10 @@
                 <div class="container">
                     <!-- Accordion  -->
                     <div id="accordion-wrap">
-                        <h2 class="pt-5">Accordion</h2>
+                        <h2 class="mt-4 pt-5 mb-3">Accordion</h2>
 
-                        <div>
-                            <h3 id="accordion-heading1" class="bg-dark py-2 pl-4 border-0 text-light">Accordion 1</h3>
+                        <div title="accordion">
+                            <h3 id="accordion-heading1" class="lead bg-info py-2 pl-4 border-0 text-light">Accordion 1</h3>
                             <div class="pl-3">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit
                                     praesent sem libero luctus et quam iaculis porttitor
@@ -93,8 +121,8 @@
                             </div>
                         </div> <!-- .accordion-item -->
 
-                        <div>
-                            <h3 id="accordion-heading2" class="bg-dark py-2 pl-4 border-0 text-light">Accordion 2</h3>
+                        <div title="accordion">
+                            <h3 id="accordion-heading2" class="lead bg-info py-2 pl-4 border-0 text-light">Accordion 2</h3>
                             <div class="pl-3">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit
                                     praesent sem libero luctus et quam iaculis porttitor
@@ -104,8 +132,8 @@
                             </div>
                         </div> <!-- .accordion-item -->
 
-                        <div>
-                            <h3 id="accordion-heading3" class="bg-dark py-2 pl-4 border-0 text-light">Accordion 3</h3>
+                        <div title="accordion">
+                            <h3 id="accordion-heading3" class="lead bg-info py-2 pl-4 border-0 text-light">Accordion 3</h3>
                             <div class="pl-3">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit
                                     praesent sem libero luctus et quam iaculis porttitor
@@ -115,8 +143,8 @@
                             </div>
                         </div> <!-- .accordion-item -->
 
-                        <div>
-                            <h3 id="accordion-heading4" class="bg-dark py-2 pl-4 border-0 text-light">Accordion 4</h3>
+                        <div title="accordion">
+                            <h3 id="accordion-heading4" class="lead bg-info py-2 pl-4 border-0 text-light">Accordion 4</h3>
                             <div class="pl-3">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit
                                     praesent sem libero luctus et quam iaculis porttitor
@@ -134,10 +162,15 @@
                             $(this).toggleClass("minus");
                             if($(this).attr("name") !== "minus"){
                                 $(this).attr("name", "minus");
+                                $(this).removeClass("bg-info text-light");
+                                $(this).addClass("text-dark");
+                                $(this).css("background-color","rgb(218, 218, 218)");
                                 $(this).next().show();
                             } else {
                                 $(this).attr("name", "");
                                 $(this).next().hide();
+                                $(this).removeClass("text-dark");
+                                $(this).addClass("bg-info text-light");
                             }/*  else {
                                 $(this).next().hide();
                             } */
@@ -145,60 +178,90 @@
                     });
                 </script>
                 <div class="container">
-                    <div>
-                            <h2 class="mx-4">Tabs</h2>
-                            <div>
-                                <div class="d-inline-block tabs">Tab one</div>
-                                <div class="d-inline-block tabs">Tab two</div>
-                                <div class="d-inline-block tabs">Tab three</div>
-                                <div class="d-inline-block tabs">Tab four</div>
-                            </div> <!-- .tab-nav -->
+                    <p class="lead mt-4" style="font-size: 225%">Tabs</p>
+                    <div class="mb-2">
+                        <div class="d-inline-block tabs active" id="tab1">Tab one</div>
+                        <div class="d-inline-block tabs" id="tab2">Tab two</div>
+                        <div class="d-inline-block tabs" id="tab3">Tab three</div>
+                        <div class="d-inline-block tabs" id="tab4">Tab four</div>
+                    </div> <!-- .tab-nav -->
 
-                            <div>
-                                <p class="h3">Tab one</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
-                                    metus pellentesque, scelerisque ex sed, volutpat nisi.
-                                    Curabitur tortor mi, eleifend ornare lobortis non. Nulla porta
-                                    purus quis iaculis ultrices. Proin aliquam sem at nibh
-                                    hendrerit sagittis. Nullam ornare odio eu lacus tincidunt
-                                    malesuada. Sed eu vestibulum elit. Curabitur tortor mi,
-                                    eleifend ornare.</p>
-                            </div> <!-- .tab-content -->
+                    <div class="tabCtn tabContent1">
+                        <p class="lead" style="font-size: 175%">Tab one</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
+                            metus pellentesque, scelerisque ex sed, volutpat nisi.
+                            Curabitur tortor mi, eleifend ornare lobortis non. Nulla porta
+                            purus quis iaculis ultrices. Proin aliquam sem at nibh
+                            hendrerit sagittis. Nullam ornare odio eu lacus tincidunt
+                            malesuada. Sed eu vestibulum elit. Curabitur tortor mi,
+                            eleifend ornare.</p>
+                    </div> <!-- .tab-content -->
 
-                            <div>
-                                    <p class="h3">Tab two</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
-                                    metus pellentesque, scelerisque ex sed, volutpat nisi.
-                                    Curabitur tortor mi, eleifend ornare lobortis non. Nulla porta
-                                    purus quis iaculis ultrices. Proin aliquam sem at nibh
-                                    hendrerit sagittis. Nullam ornare odio eu lacus tincidunt
-                                    malesuada. Sed eu vestibulum elit. Curabitur tortor mi,
-                                    eleifend ornare.</p>
-                            </div> <!-- .tab-content -->
+                    <div class="tabCtn tabContent2">
+                        <p class="lead" style="font-size: 175%">Tab two</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
+                            metus pellentesque, scelerisque ex sed, volutpat nisi.
+                            Curabitur tortor mi, eleifend ornare lobortis non. Nulla porta
+                            purus quis iaculis ultrices. Proin aliquam sem at nibh
+                            hendrerit sagittis. Nullam ornare odio eu lacus tincidunt
+                            malesuada. Sed eu vestibulum elit. Curabitur tortor mi,
+                            eleifend ornare.</p>
+                    </div> <!-- .tab-content -->
 
-                            <div>
-                                    <p class="h3">Tab three</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
-                                    metus pellentesque, scelerisque ex sed, volutpat nisi.
-                                    Curabitur tortor mi, eleifend ornare lobortis non. Nulla porta
-                                    purus quis iaculis ultrices. Proin aliquam sem at nibh
-                                    hendrerit sagittis. Nullam ornare odio eu lacus tincidunt
-                                    malesuada. Sed eu vestibulum elit. Curabitur tortor mi,
-                                    eleifend ornare.</p>
-                            </div> <!-- .tab-content -->
+                    <div class="tabCtn tabContent3">
+                        <p class="lead" style="font-size: 175%">Tab three</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
+                            metus pellentesque, scelerisque ex sed, volutpat nisi.
+                            Curabitur tortor mi, eleifend ornare lobortis non. Nulla porta
+                            purus quis iaculis ultrices. Proin aliquam sem at nibh
+                            hendrerit sagittis. Nullam ornare odio eu lacus tincidunt
+                            malesuada. Sed eu vestibulum elit. Curabitur tortor mi,
+                            eleifend ornare.</p>
+                    </div> <!-- .tab-content -->
 
-                            <div>
-                                    <p class="h3">Tab four</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
-                                    metus pellentesque, scelerisque ex sed, volutpat nisi.
-                                    Curabitur tortor mi, eleifend ornare lobortis non. Nulla porta
-                                    purus quis iaculis ultrices. Proin aliquam sem at nibh
-                                    hendrerit sagittis. Nullam ornare odio eu lacus tincidunt
-                                    malesuada. Sed eu vestibulum elit. Curabitur tortor mi,
-                                    eleifend ornare.</p>
-                            </div> <!-- .tab-content -->
-
-                        </div>
+                    <div class="tabCtn tabContent4">
+                        <p class="lead" style="font-size: 175%">Tab four</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
+                            metus pellentesque, scelerisque ex sed, volutpat nisi.
+                            Curabitur tortor mi, eleifend ornare lobortis non. Nulla porta
+                            purus quis iaculis ultrices. Proin aliquam sem at nibh
+                            hendrerit sagittis. Nullam ornare odio eu lacus tincidunt
+                            malesuada. Sed eu vestibulum elit. Curabitur tortor mi,
+                            eleifend ornare.</p>
+                    </div> <!-- .tab-content -->
+                    <script>
+                        $(document).ready(function(){
+                            $("#tab1").addClass("active");
+                            $(".tabContent2").hide();
+                            $(".tabContent3").hide();
+                            $(".tabContent4").hide();
+                            $(".tabs").click(function(){
+                                $("div.tabs").removeClass("active");
+                                $(this).toggleClass("active");
+                                if ($(this).attr("id") == "tab1"){
+                                    $(".tabContent1").show();
+                                    $(".tabContent2").hide();
+                                    $(".tabContent3").hide();
+                                    $(".tabContent4").hide();
+                                } else if ($(this).attr("id") == "tab2"){
+                                    $(".tabContent2").show();
+                                    $(".tabContent3").hide();
+                                    $(".tabContent4").hide();
+                                    $(".tabContent1").hide();
+                                } else if ($(this).attr("id") == "tab3"){
+                                    $(".tabContent3").show();
+                                    $(".tabContent4").hide();
+                                    $(".tabContent1").hide();
+                                    $(".tabContent2").hide();
+                                } else if ($(this).attr("id") == "tab4"){
+                                    $(".tabContent4").show();
+                                    $(".tabContent1").hide();
+                                    $(".tabContent2").hide();
+                                    $(".tabContent3").hide();
+                                };
+                            });
+                        });
+                    </script>
                 </div>
                 <div id="main-content">
                     <div id="content-wrap">
@@ -218,29 +281,28 @@
                                 </div> <!-- .container -->
                             </div> <!-- 3section1 -->
 
+                            <div class="container">
+                                <div class="text-center">
+                                    <h2>Write to Us <strong>If You Have Questions</strong></h2>
+                                    <p class="lead" style="font-size: 85%; color: gray">Donec dictum felis eget magna condimentum bibendum. Phasellus
+                                        dignissim cursus sollicitudin.</p>
+                                    
+                                    <div class="info py-3" style="background-image: url(assets/img/bg-contact.jpg); line-height: unset">
+                                        <p><span style="font-size: 125%">contact@zupahealth.com</span><br>
+                                            <span style="font-size: 450%">+44 35 368 65 58</span><br>
+                                        <span style="font-size: 125%">609 5th Ave New York, NY 10017<br>United States</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- style="background-image: url(assets/img/bg-contact.jpg)" -->
                             <div id="contact">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="titlebox text-center">
-                                                <h2>Write to Us <strong>If You Have Questions</strong></h2>
-                                                <p>Donec dictum felis eget magna condimentum bibendum. Phasellus
-                                                    dignissim cursus sollicitudin.</p>
-                                            </div> <!-- .titlebox -->
+                                             <!-- .titlebox -->
 
-                                            <div class="contactbox">
-                                                <div class="bg">
-                                                    <img src="assets/img/bg-contact.jpg">
-                                                </div>
-                                                <div class="info">
-                                                    <div class="email">contact@zupahealth.com</div>
-                                                    <div class="phone">+44 35 368 65 58</div>
-                                                    <div class="address">609 5th Ave New York, NY 10017<br>United
-                                                        States</div>
-                                                </div>
-                                            </div> <!-- .contactbox -->
+                                             <!-- .contactbox -->
 
-                                            <div class="wprt-spacer" data-desktop="70" data-mobi="60" data-smobi="60"></div>
 
                                             <form class="contact-form" action="./includes/contact/contact-process.php"
                                                 method="POST">
@@ -275,16 +337,16 @@
                                             </form>
 
                                         </div>
-                                    </div> <!-- .row -->
-                                </div> <!-- .container -->
+                                    </div> 
+                                </div> 
                             </div>
 
-                        </div> <!-- #site-content -->
-                    </div> <!-- #content-wrap -->
-                </div> <!-- #main-content -->
+                        </div>
+                    </div> 
+                </div> 
 
-            </div> <!-- #page -->
-        </div> <!-- #wrapper -->
+            </div> 
+        </div>
 
 
 
