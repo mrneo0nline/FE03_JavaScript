@@ -6,116 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <!-- <CSS included> -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+		  <link rel="stylesheet" href="css/bootstrap.min.css">
+		  <link rel="stylesheet" href="style.css">
 
         <!-- <Javascripts used> -->
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <title>FE03 | Bai Tap On tap JS and jQuery</title>
-        <style>
-            * {
-                font-family: "Century Gothic", "sans-serif", "Tahoma", "Verdana";
-            }
-            div[title="accordion"]{
-                margin: 13px 0;
-            }
-            div[title*="slide"]{
-                height: 200px;
-            }
-            h3 {
-                padding: .25em 0px .25em 25px;
-                cursor: pointer;
-                background: url(assets/img/slider/plus.png) no-repeat left center;
-            }
-            h3.minus {
-                background: url(assets/img/slider/minus.png) no-repeat left center;
-            }
-            div.tabs{
-                width: 100px;
-                text-align: center;
-                padding: 10px 0px;
-                border: 0;
-                cursor: pointer;
-                background-color: rgba(204, 204, 204, 0.397);
-            }
-            
-            div.tabs:hover, div.tabs.active:hover{
-                background-color: rgba(204, 204, 204, 0.692);
-            }
-            div.tabs.active{
-                background-color: #0d7efe;
-                color: white;
-            }
-            
-            div #tab2, div #tab3, div #tab4{
-                margin-left: 9px;
-            }
-            div[class*="tabContent"] {
-                padding-left: 5px;
-                background-color: rgba(223, 223, 223, 0.199);
-            }
-            div.info{
-                color: white;
-                font-weight: lighter;
-            }
-            form div span{
-                position: relative;
-                float: left;
-            }
-            form div span:nth-of-type(1),
-            form div span:nth-of-type(2),
-            form div span:nth-of-type(3),
-            form div span:nth-of-type(4){
-                width: 48%;
-            }
-            form div span:nth-of-type(even){
-                margin-left: 4%;
-            }
-
-            form div span:nth-last-of-type(1){
-                width: 100%;
-            }
-            input[type="text"], input[type="email"],textarea{
-                margin: 17px 0;
-                width: 100%;
-                border: 1px solid rgba(223, 223, 223, 0.486);
-                padding: 13px 15px;
-            }
-            ::placeholder{
-                color: rgb(194, 192, 192);
-                font-size: 85%;
-            }
-            form div div{
-                float: left;
-                display: flex;
-                margin-left: 35%;
-                margin-bottom: 110px;
-                justify-content: center;
-            }
-            button{
-                padding: 10px 25px;
-                border: 0;
-                cursor: pointer;
-                background-color: rgb(248, 190, 29);
-                color: white;
-                font-weight: bold;
-                font-size: 120%;
-            }
-            button:hover{
-                color: white;
-                background-color: rgb(22, 22, 22);
-            }
-            span > div.error, #txtArea.error {
-                position: absolute;
-                /* display: inline; */
-                right: 20px;
-                top: 33px;
-                color: #d82e2e;
-                font-size: 75%;
-                font-weight: bold
-            }
-        </style>
+		  <script src="js/bootstrap.min.js"></script>
+		  <script src="main.js"></script>
+		  <title>FE03 | Bai Tap On tap JS and jQuery</title>
+		  
     </head>
 
     <body>
@@ -123,7 +23,7 @@
             <div class="container-fluid mt-2">
                 <div class="row">
                     <div class="col-md-12">
-                        <div id="carouselEx" class="carousel slide" data-ride="carousel" style="background-size: cover">
+                        <div id="carouselEx" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active" title="slide1">
                                     <img src="assets/img/slider/1.jpg" name="first-slide">
@@ -211,7 +111,7 @@
                     </div> <!-- .accordion-item -->
                 </div> <!-- .Accordion -->
             </div>
-            <script>
+            <!-- <script>
                 $(document).ready(function() {
                     $("h3").next().hide();
                     $("h3").addClass("py-3");
@@ -233,9 +133,9 @@
                         } */
                     });
                 });
-            </script>
-            <div class="container">
-                <p class="lead mt-4" style="font-size: 225%">Tabs</p>
+            </script> -->
+            <div class="container" id="allTabs">
+                <p class="lead mt-4" id="tabTitle">Tabs</p>
                 <div class="mb-2">
                     <div class="d-inline-block tabs active" id="tab1">Tab one</div>
                     <div class="d-inline-block tabs" id="tab2">Tab two</div>
@@ -244,8 +144,8 @@
                 </div> <!-- .tab-nav -->
 
                 <div class="tabCtn tabContent1">
-                    <p class="lead" style="font-size: 175%">Tab one</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
+                    <p class="lead tb">Tab one</p>
+                    <p>1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
                         metus pellentesque, scelerisque ex sed, volutpat nisi.
                         Curabitur tortor mi, eleifend ornare lobortis non. Nulla porta
                         purus quis iaculis ultrices. Proin aliquam sem at nibh
@@ -255,8 +155,8 @@
                 </div> <!-- .tab-content -->
 
                 <div class="tabCtn tabContent2">
-                    <p class="lead" style="font-size: 175%">Tab two</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
+                    <p class="lead tb">Tab two</p>
+                    <p>2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
                         metus pellentesque, scelerisque ex sed, volutpat nisi.
                         Curabitur tortor mi, eleifend ornare lobortis non. Nulla porta
                         purus quis iaculis ultrices. Proin aliquam sem at nibh
@@ -266,8 +166,8 @@
                 </div> <!-- .tab-content -->
 
                 <div class="tabCtn tabContent3">
-                    <p class="lead" style="font-size: 175%">Tab three</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
+                    <p class="lead tb">Tab three</p>
+                    <p>3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
                         metus pellentesque, scelerisque ex sed, volutpat nisi.
                         Curabitur tortor mi, eleifend ornare lobortis non. Nulla porta
                         purus quis iaculis ultrices. Proin aliquam sem at nibh
@@ -277,8 +177,8 @@
                 </div> <!-- .tab-content -->
 
                 <div class="tabCtn tabContent4">
-                    <p class="lead" style="font-size: 175%">Tab four</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
+                    <p class="lead tb">Tab four</p>
+                    <p>4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
                         metus pellentesque, scelerisque ex sed, volutpat nisi.
                         Curabitur tortor mi, eleifend ornare lobortis non. Nulla porta
                         purus quis iaculis ultrices. Proin aliquam sem at nibh
@@ -286,7 +186,7 @@
                         malesuada. Sed eu vestibulum elit. Curabitur tortor mi,
                         eleifend ornare.</p>
                 </div> <!-- .tab-content -->
-                <script>
+<!--                 <script>
                     $(document).ready(function(){
                         $("#tab1").addClass("active");
                         $(".tabContent2").hide();
@@ -318,116 +218,116 @@
                             };
                         });
                     });
-                </script>
+                </script> -->
             </div>
             <div class="container">
                 <div class="text-center">
                     <h2>Write to Us <strong>If You Have Questions</strong></h2>
-                    <p class="lead" style="font-size: 85%; color: gray">Donec dictum felis eget magna condimentum bibendum. Phasellus
+                    <p class="lead" id="contactDes">Donec dictum felis eget magna condimentum bibendum. Phasellus
                         dignissim cursus sollicitudin.</p>
                     
-                    <div class="info py-3" style="background-image: url(assets/img/bg-contact.jpg); line-height: unset">
-                        <p><span style="font-size: 125%">contact@zupahealth.com</span><br>
-                            <span style="font-size: 450%">+44 35 368 65 58</span><br>
-                        <span style="font-size: 125%">609 5th Ave New York, NY 10017<br>United States</span></p>
+                    <div class="info py-3">
+                        <p>
+					<span>contact@zupahealth.com</span><br>
+                        	<span id="ctPhone">+44 35 368 65 58</span><br>
+					<span>609 5th Ave New York, NY 10017<br>United States</span>
+				</p>
                     </div>
                 </div>
             </div>
             <div class="container">
-                <form id="registerForm" action="https://google.com.vn">
+                <form id="registerForm" name="registerForm" method="GET" action="https://google.com.vn">
                     <div>
                         <span>
-                            <input type="text" id="name" name="name" placeholder="Name *">
+                            <input class="inputFields" type="text" id="name" name="name" placeholder="Name *">
+                            <div>This field is required.</div>
+                        </span>
+                        <span data-toggle="tooltip" data-html="true" title="<i>Example: myName@gmail.com</i>">
+                            <input class="inputFields" type="email" id="email" name="email" placeholder="E-mail *" >
+                            <div>This field is required.</div>
+                        </span>
+                        <span data-toggle="tooltip" data-html="true" title="<b><u>Tips:</u></b> Phone number should be 10 or 11 digit characters<br><i>Examples: 0123456789</i>">
+                            <input class="inputFields" type="text" id="phone" name="phone" placeholder="Phone Number *">
                             <div>This field is required.</div>
                         </span>
                         <span>
-                            <input type="email" id="email" name="email" placeholder="E-mail *" >
+                            <input class="inputFields" type="text" id="subject" name="subject" placeholder="Subject *">
                             <div>This field is required.</div>
                         </span>
                         <span>
-                            <input type="text" id="phone" name="phone" placeholder="Phone Number *">
-                            <div>This field is required.</div>
-                        </span>
-                        <span>
-                            <input type="text" id="subject" name="subject" placeholder="Subject *">
-                            <div>This field is required.</div>
-                        </span>
-                        <span>
-                            <textarea name="message" rows="10" placeholder="Message * "></textarea>
+                            <textarea class="inputFields" name="message" rows="10" placeholder="Message * "></textarea>
                             <div>This field is required.</div>
                         </span>
                         <div>
-                            <button id="btnSubmit">SEND MESSAGE</button>
+                            <input type="button" id="btnSubmit" value="SEND MESSAGE">
                         </div>
                     </div>
                 </form>
             </div>
-            <script>
-                $(document).ready(function(evt){
-                    $("form div span div").hide();
-                    /* if ($("#btnSubmit").click){
-                        $("input").each(function(){
-                            $(this).keypress(function(e){
-                                $(this).next().hide();
-                            });
-                            var textValue = function(){
-                                return $(this).val();
-                            };
-                            if (textValue.length == 0){
-                                $(this).next().addClass("error");
-                                $(this).next().show();
-                            }
-                        });
-                    }; */
-                    /* $("input").each(function(){
-                        // $(this).next().hide();
-                        if($(this).focus() == true){
-                            $(this).next().addClass("error");
-                            $(this).next().show();
-                        } else if ($(this).keypress == true){
-                            $(this).next().removeClass("error");
-                            $(this).next().hide()
-                        };
-                        
-                    }); */
-                    var isValid = true;
-                    
-                    $("#btnSubmit").click(function(evt){
-                        $("input").each(function(){
-                            /* $(this).keypress(function(e){
-                                $(this).next().hide();
-                            }); */
-                            function textValue(){
-                                return $(this).val();
-                            };
-                            if (textValue.length != 0){
-                                // $(this).next().addClass("error");
-                                $(this).next().hide();
-                            } else {
-                                $(this).next().addClass("error");
-                                $(this).next().show();
-                            };
-                        });
-                        if($("#name").val() == ""){
-                            $("#name").next().addClass("error");
-                            $("#name").next().show();
-                            isValid = false;
-                        } else {
-                            $("#name").next().removeClass("error");
-                            $("#name").next().hide();
-                        };
-                        evt.preventDefault();
-                    });
-                    /* $(this).append("<div>This field is required.</div>");
-                    $(this).next().toggleClass("error");
-                    isValid = false; */
-                    
-                    
+            <!-- <script>
+					$(document).ready(function(){
+						$("form div span div").hide();
+						$("#btnSubmit").click(function(){
+							var isValid = true;
+							// Check the input fields has value or not
+							if($("#name").val() == ""){
+								$("#name").next().addClass("error");
+								$("#name").next().show();
+								isValid = false;
+							} else {
+								$("#name").next().removeClass("error");
+								$("#name").next().hide();
+							};
 
+							if($("#email").val() == ""){
+								$("#email").next().addClass("error");
+								$("#email").next().show();
+								isValid = false;
+							} else {
+								$("#email").next().removeClass("error");
+								$("#email").next().hide();
+							};
 
-                    
-                });
-            </script>
+							if($("#phone").val() == ""){
+								$("#phone").next().addClass("error");
+								$("#phone").next().show();
+								isValid = false;
+							} else {
+								$("#phone").next().removeClass("error");
+								$("#phone").next().hide();
+							};
+
+							if($("#subject").val() == ""){
+								$("#subject").next().addClass("error");
+								$("#subject").next().show();
+								isValid = false;
+							} else {
+								$("#subject").next().removeClass("error");
+								$("#subject").next().hide();
+							};
+
+							if($("textarea").val() == ""){
+								$("textarea").next().addClass("error");
+								$("textarea").next().show();
+								isValid = false;
+							} else {
+								$("textarea").next().removeClass("error");
+								$("textarea").next().hide();
+							};
+
+							$(".inputFields").on("input", function(){
+								if ($(this).val() == ""){
+									$(this).next().show();
+								} else {
+								$(this).next().hide();
+								}
+							});
+							if (isValid){
+								$("#registerForm").submit();
+							}
+						});
+					});
+            </script> -->
         </div>
     </body>
 
