@@ -1,9 +1,8 @@
 $(document).ready(function() {
 	// move focus to first text box
-	
+	$("#email_1").focus();
 	// the handler for the click event of a submit button
-	$("#email_form").submit(
-		function(event) {
+	$("#email_form").submit(function(evt) {
 			var isValid = true;
 			
 			// validate the email entry with a regular expression
@@ -34,12 +33,15 @@ $(document).ready(function() {
 			$("#email_2").val(email2);
 			
 			// validate the first name entry
-			if ($("#first_name").val() == "") {
+			// if ($("#first_name").val() == "") {
+			var firstName = $("#first_name").val().trim();
+			if (firstName == "") {
 				$("#first_name").next().text("This field is required.");
 				isValid = false;
 			} else {
 				$("#first_name").next().text("");
 			}
+			$("#first_name").val(firstName);
 			
 			// validate the last name entry
 			var lastName = $("#last_name").val().trim();
@@ -65,12 +67,29 @@ $(document).ready(function() {
 			$("#state").val(state);
 			
 			// validate the zip-code entry
-			
-			// validate the check boxes	
-						
+			var zipCode = $("#zip").val().trim();
+			if (zipCode == "") {
+				$("#zip").next().text("This field is required.");
+				isValid = false;
+			} else if ( zipCode.length != 5 ) {
+				$("#zip").next().text("Use 5-character code.");
+				isValid = false;
+			} else {
+				$("#zip").next().text("");
+			}
+			$("#zip").val(zipCode);
+			// validate the check boxes
+			var checkedBoxes = [];	
+			checkedBoxes = $(":checkbox:checked");
+			if (checkedBoxes.length == 0){
+				$("#net").next().text("Select at least one.");
+				isValid = false;
+			} else {
+				$("#net").next().text("");
+			}
 			// prevent the default action of submitting the form if any entries are invalid 
 			if (isValid == false) {
-			 			
+				evt.preventDefault();
 			}
 		} // end function
 	);	// end submit

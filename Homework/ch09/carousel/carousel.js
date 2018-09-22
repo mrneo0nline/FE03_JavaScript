@@ -11,7 +11,8 @@ $(document).ready(function() {
 		if (leftProperty - 300 <= -900) {
 			newLeftProperty = 0; }
 		else {
-			newLeftProperty = leftProperty - 300; }
+			// newLeftProperty = leftProperty - 300; }
+			newLeftProperty = leftProperty - 100; }
 		// use the animate function to change the left property
 		slider.animate( {left: newLeftProperty}, 1000);
 	});  // end click
@@ -23,10 +24,12 @@ $(document).ready(function() {
 		
 		// determine new value of left property
 		if (leftProperty < 0) {
-			newLeftProperty = leftProperty + 300;
+			// newLeftProperty = leftProperty + 300;
+			newLeftProperty = leftProperty + 100;
 		}
 		else {
-			newLeftProperty = 0;
+			// newLeftProperty = 0;
+			newLeftProperty = leftProperty - 600;
 		}
 		
 		// use the animate function to change the left property
