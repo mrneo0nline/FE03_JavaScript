@@ -1,0 +1,73 @@
+{
+	"posts": [{
+			"id": 1,
+			"name": "Quang Le Hong Ky",
+			"title": "test json-server",
+			"author": "typicode",
+			"content": "This is content #1"
+		},
+		{
+			"id": 2,
+			"name": "Quang Le Hong Ky",
+			"title": "test json-server",
+			"author": "typicode",
+			"content": "This is content #2"
+		},
+		{
+			"id": 3,
+			"name": "Quang Le Hong Ky",
+			"title": "test json-server",
+			"author": "typicode",
+			"content": "This is content #3"
+		},
+		{
+			"id": 4,
+			"name": "Quang Le Hong Ky",
+			"title": "test json-server",
+			"author": "typicode",
+			"content": "This is content #4"
+		},
+		{
+			"id": 5,
+			"name": "Quang Le Hong Ky",
+			"title": "test json-server",
+			"author": "typicode",
+			"content": "This is content #5"
+		},
+		{
+			"id": 6,
+			"name": "Quang Le Hong Ky",
+			"title": "test json-server",
+			"author": "typicode",
+			"content": "This is content #6"
+		},
+		{
+			"id": 7,
+			"name": "Quang Le Hong Ky",
+			"title": "test json-server",
+			"author": "typicode",
+			"content": "This is content #7"
+		},
+		{
+			"id": 8,
+			"name": "Quang Le Hong Ky",
+			"title": "test json-server",
+			"author": "typicode",
+			"content": "This is content #8"
+		},
+		{
+			"id": 9,
+			"name": "Quang Le Hong Ky",
+			"title": "test json-server",
+			"author": "typicode",
+			"content": "This is content #9"
+		},
+		{
+			"id": 10,
+			"name": "Quang Le Hong Ky",
+			"title": "test json-server",
+			"author": "typicode",
+			"content": "This is content #10"
+		}
+	]
+}

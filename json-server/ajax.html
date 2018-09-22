@@ -1,0 +1,30 @@
+<html>
+<head>
+ <script src="http://code.jquery.com/jquery-1.4.2.js"></script>
+ <script type="text/javascript">
+  $(document).ready(function(){
+    var datas;
+   $("#ajaxButton").click(function(){
+    $.ajax({
+     type:"GET",
+     url:"http://localhost:3000/posts",
+     success:function(data, status){
+      data = data;
+      console.log(data);
+      console.log(status);
+      $("#responseDiv").html(data.posts[0].title);
+     }
+    });
+   });
+  });
+ </script>
+</head>
+<body>
+ <div>
+  <input type="button" value="ajax" id="ajaxButton"/>
+ </div>
+ <div id="responseDiv">
+
+ </div>
+</body>
+</html>

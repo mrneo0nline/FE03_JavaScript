@@ -1,0 +1,36 @@
+#tabs {
+	max-width: 45%;
+	height: 220px;
+	margin: 10% 25%;
+	font-size: 85%;
+}
+
+#tabs-1 label {
+	width: 25%;
+	text-align: right;
+	padding-right: 2%;
+}
+
+#tabs-1 .login {
+	width: 60%;
+}
+
+#tabs-1 .btn_login {
+	width: 20%;
+	margin: auto 40%;
+}
+
+#tabs-2 label {
+	width: 17%;
+	text-align: right;
+	padding-right: 2%;
+}
+
+#tabs-2 .register {
+	width: 29%;
+}
+
+#tabs-2 .btn_register {
+	width: 22%;
+	margin: auto 39%;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- <CSS included> -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        
+
+        <!-- <Javascripts used> -->
+        <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
+        <script src="jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
+        <link rel="stylesheet" href="style.css">
+        <!-- <script src="jquery-ui-1.12.1/external/jquery/jquery.js"></script> -->
+        <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+        <script src="main.js"></script>
+        <title>FE03 | CH11 - Bai Tap jQuery plugins</title>
+    </head>
+
+    <body>
+        <div id="tabs">
+            <ul>
+                <li><a href="#tabs-1">Login</a></li>
+                <li><a href="#tabs-2">Registeration</a></li>
+            </ul>
+            <div id="tabs-1">
+                <form action="https://google.com.vn" method="GET">
+                    <label>Username:</label><input class="login" type="text" placeholder="Enter account name"><br>
+                    <label>Password:</label><input class="login" type="password" placeholder="Enter password"><br><br>
+                    <input class="btn_login" type="button" value="Log-In">
+                </form>
+            </div>
+            <div id="tabs-2">
+                <form action="https://google.com.vn" method="GET">
+                    <span><label>Birthday:</label><input class="register" type="text" id="datepicker"></span>
+                    <span class="ui-widget"><label for="tags">Address: </label><input class="register" id="tags"></span>
+                    <span><label>Username:</label><input class="register" type="text"></span>
+                    <span><label>Email:</label><input class="register" type="text"></span>
+                    <span><label>Password:</label><input class="register" type="password"></span><br><br>
+                    <div><input type="button" class="btn_register" value="Register"></div>
+                </form>
+            </div>
+        </div>
+
+    </body>
+
+</html>
