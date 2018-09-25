@@ -24,6 +24,61 @@ $(document).ready(function () {
 		return futureValue;
 	};
 
+	var formatFV = function (futureValue) {
+		var dotLocation = futureValue.indexOf(".");
+		var cents = futureValue.substring(dotLocation + 1, dotLocation + 3);
+		var hundreds = futureValue.substring(dotLocation - 3, dotLocation);
+		var thousands = "";
+		var millions = "";
+		if (dotLocation < 6) {
+			thousands = futureValue.substring(0, dotLocation - 3);
+			millions = "";
+		} else {
+			thousands = futureValue.substring(dotLocation - 6, dotLocation - 3);
+			millions = futureValue.substring(0, dotLocation - 6);
+		}
+		var futureValueFormatted = "";
+		if (dotLocation >= 7) {
+			futureValueFormatted = "$" + millions + "," + thousands + "," + hundreds + "." + cents;
+		} else {
+			futureValueFormatted = "$" + thousands + "," + hundreds + "." + cents;
+		}
+		return futureValueFormatted;
+	};
+
+	var getDate = function () {
+		var currentDate = new Date();
+		// get the date parts 
+		var month = currentDate.getMonth() + 1;
+		if (month < 10) {
+			month = "0" + month;
+		}
+		var day = currentDate.getDate();
+		if (day < 10) {
+			day = "0" + day;
+		}
+		var year = currentDate.getFullYear();
+		var dateString = "Today is " + month + "/" + day + "/" + year + " at ";
+		// get the time parts
+		var hours = currentDate.getHours();
+		
+		var minutes = currentDate.getMinutes();
+		if (minutes < 10) {
+			minutes = "0" + minutes; // pad minutes
+		}
+		function hourGMT7(hours) {
+			var hourGMT;
+			if (hours + 7 < 12) {
+				hourGMT = hours + 7 + ":" + minutes + " AM, GMT+7";
+			} else {
+				hourGMT = hours - 5 + ":" + minutes + " PM, GMT+7";
+			}
+			return hourGMT;
+		};
+		var dateString = "Today is " + month + "/" + day + "/" + year;
+		dateString += " at " + hourGMT7(hours);
+		return dateString;
+	};
 
 	$("#calculate").click(function () {
 		// var investment = parseFloat( $("#investment").val() );
@@ -45,9 +100,11 @@ $(document).ready(function () {
 			alert("Must be > 0");
 			allValid = false;
 		} else {
-			$("#future_value").val(calculateFV(investment, rate, years));
+			futureValue = calculateFV(investment, rate, years);
+			$("#future_value").val(formatFV(futureValue));
 		}
 	});
 
+	$("#date").text(getDate());
 	$("#investment").focus();
 });
