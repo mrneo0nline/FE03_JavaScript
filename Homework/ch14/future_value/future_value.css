@@ -2,31 +2,24 @@ body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 100%;
     background-color: white;
-    width: 510px;
-    margin: 50px auto 0px;
+    width: 400px;
+    margin: 0 auto;
     border: 3px solid blue;
-	padding: 0 2em 1em;
+    padding: 0 2em 1em;
 }
-
-h1 {
+h1 { 
     font-size: 150%;
     color: blue;
     margin-bottom: .5em;
 }
 label {
     float: left;
-    width: 8em;
+    width: 12em;
 }
-input[type="text"] {
-    width: 20em;
-    margin-left: 1em;
-    margin-bottom: 1em;
-}
-input[type="button"] {
+input {
     width: 10em;
-    margin: auto 35%;
+    margin-bottom: .5em;
 }
 #message {
-    font-weight: bold;
     color: red;
 }

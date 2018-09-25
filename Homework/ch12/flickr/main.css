@@ -13,9 +13,19 @@ body {
 h1 {
 	padding-top: .25em;
 	color: blue;
+	font-size: 200%;
+
 }
 h2 {
 	padding-top: 1em;
 	padding-bottom: .5em;
-	font-size: 110%;
+	font-size: 135%;
+}
+.dateTake {
+	margin-bottom: 5px;
+}
+
+em {
+	font-size: 85%;
+	color: gray
 }

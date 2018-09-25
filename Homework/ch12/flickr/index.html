@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Flickr</title>
-    <link href="main.css" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-	<script>
-	$(document).ready(function(){
-			var url = "http://api.flickr.com/services/feeds/photos_public.gne?" +
-	    			  "format=json&jsoncallback=?&tags=waterfall,yosemite";
-	
-			$.getJSON(url, function(data){
-				var html = "";
-				$.each(data.items, function(i, item){
-					html += "<h2>" + item.title + "</h2>";	
-					html += "<img src=" + item.media.m + ">";
-					html += "<p></p>";
+	<head>
+		<meta charset="utf-8">
+		<title>Flickr</title>
+		<link href="main.css" rel="stylesheet">
+		<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+		<script>
+			$(document).ready(function () {
+				var url = "http://api.flickr.com/services/feeds/photos_public.gne?" +
+					"format=json&jsoncallback=?&tags=waterfall,yosemite";
+				
+				$.getJSON(url, function (data) {
+					var html = "";
+					$.each(data.items, function (i, item) {
+						html += "<h2>" + item.title + "</h2>";
+						// html += "<img src=" + item.media.m + ">";
+						html += "<p class=\"dateTake\"><u>Taken on:</u> " + item.date_taken +  "</p>";
+						html += "<em>" + item.description + "</em>";
+						html += "<p><em>" + item.tags + "</em></p>";
+					});
+					$("#photos").html(html);
+					$("a").parent().css({"margin":"7px 0px"});
 				});
-				$("#photos").html(html);
-			});          
-        });
-    </script>
-</head>
+				/* setInterval(function(){
+					$("a").parent().css({"margin":"5px 0px"});
+				}, 5000); */
+			});
 
-<body>
-<main>
-	<h1>Yosemite waterfalls</h1>
-	<div id="photos"></div>
-</main>
-</body>
+		</script>
+	</head>
+
+	<body>
+		<main>
+			<h1>Yosemite waterfalls</h1>
+			<div id="photos"></div>
+		</main>
+	</body>
+
 </html>
