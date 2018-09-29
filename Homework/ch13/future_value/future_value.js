@@ -68,10 +68,21 @@ $(document).ready(function () {
 		}
 		function hourGMT7(hours) {
 			var hourGMT;
-			if (hours + 7 < 12) {
+			/* if (hours + 7 < 12) {
 				hourGMT = hours + 7 + ":" + minutes + " AM, GMT+7";
-			} else {
+			} else if (hours + 7 == 12) {
+				hourGMT = hours + 7 + ":" + minutes + " PM, GMT+7";
+			} else if (hours + 7 > 12 && hours + 7 < 24) {
 				hourGMT = hours - 5 + ":" + minutes + " PM, GMT+7";
+			} */
+			if (hours + 7 >= 24) {
+				hourGMT = hours - 17 + ":" + minutes + " AM, GMT+7";
+			} else if (hours + 7 > 12) {
+				hourGMT = hours - 5 + ":" + minutes + " PM, GMT+7";
+			} else if (hours + 7 == 12) {
+				hourGMT = hours + 7 + ":" + minutes + " PM, GMT+7";
+			} else {
+				hourGMT = hours + 7 + ":" + minutes + " AM, GMT+7";
 			}
 			return hourGMT;
 		};
