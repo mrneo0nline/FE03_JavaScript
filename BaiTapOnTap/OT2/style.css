@@ -1,0 +1,45 @@
+* {
+	font-family: "Carlito", "Century Gothic", "sans-serif";
+}
+
+body {
+	max-width: 60%;
+}
+
+div.main {
+	margin: auto 20%;
+}
+
+div #addTDL{
+	height: 150px;
+}
+
+input.taskName {
+	width: 50%;
+	height: 35px;
+	padding-left: 7px;
+	border: 1px solid gray;
+	margin-right: 10px;
+	/* margin-bottom: 25px; */
+}
+
+#addBtn,
+#formAdd {
+	margin-bottom: 25px;
+}
+
+.btn_add {
+	margin-right: 10px;
+	width: 15%;
+}
+
+th:nth-of-type(4), td:nth-of-type(4) {
+	text-align: right;
+}
+/* .btn_edit, .btn_del {
+	width: 75%;
+} */
+td input[type="text"] {
+	width: 50%;
+	height: 35px;
+}
