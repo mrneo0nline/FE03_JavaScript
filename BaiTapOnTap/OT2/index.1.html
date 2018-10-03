@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- <CSS included> -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.1.css">
+
+	<!-- <Javascripts used> -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="main.1.js"></script>
+	<title>FE03 | Bai Tap On tap 2</title>
+
+</head>
+
+<body>
+	<div class="container">
+		<form id="myform" action="" class="">
+			<fieldset id="fieldset-1">
+				<label for="add"></label>
+				<input id="add" class="btn btn-outline-primary my-2" type="button" value="Add">
+			</fieldset>
+			<fieldset id="fieldset-2" class="my-2">
+				<label for="addTodo"></label>
+				<input type="text" id="addTodo">
+				<label for="confirm"></label>
+				<input id="confirm" class="btn btn-outline-success" type="button" value="Confirm">
+				<label for="cancelAdd"></label>
+				<input id="cancelAdd" class="btn btn-outline-danger" type="button" value="Cancel">
+			</fieldset>
+		</form>
+		<table id="mytable" class="table table-secondary table-striped">
+			<thead class="thead-light">
+				<tr>
+					<th>STT</th>
+					<th><input id="checkall" type="checkbox">&nbsp;Status</th>
+					<th>To-do</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody class="content">
+
+			</tbody>
+		</table>
+	</div>
+</body>
+
+</html>
