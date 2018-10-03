@@ -4,6 +4,8 @@ $(document).ready(function () {
 	var todoList = ['Hoc CSS', 'Hoc React JS', 'Hoc Front End', 'On Tap'];
 	var tblHTML = '';
 	var editedTbl = '';
+	var delTbl = '';
+	var addTbl = '';
 	var pText;
 
 	$.each(todoList, function (i) {
@@ -23,6 +25,21 @@ $(document).ready(function () {
 		$("#addBtn").show();
 	});
 
+	//ADD_Confirm button
+	$(".btn_add").click(function () {
+		todoList.push($('#formAdd input[type=text]').val());
+		alert(todoList);
+		$("#formAdd").hide();
+		$("#addBtn").show();
+		$.each(todoList, function (i) {
+			addTbl += '<tr><td>' + (i + 1) + '</td><td><input type=\'checkbox\'></td><td><p>' + todoList[i] + '</p><input type=\"text\" class=\"edtTodos\"><input type=\"button\" class=\"btn btn-light ml-2 border-success edit_OK\" value=\"OK\"><input type=\"button\" class=\"btn btn-light ml-2 border-danger edit_cancel\" value=\"Cancel\"></td><td><input type=\"button\" class=\"btn btn-light ml-2 border-success btn_edit\" value=\"Edit\"><input type=\"button\" class=\"btn btn-light ml-2 border-danger btn_del\" value=\"Delete\"></td></tr>';
+		});
+		$("table tbody").empty();
+		$("table tbody").append(addTbl);
+		$(".edit_OK, .edit_cancel").hide();
+		$(".edtTodos").hide();
+
+	});
 	//Edit button
 	$(".btn_edit").click(function () {
 		pText = $(this).parent().prev().children("p").text();
@@ -32,6 +49,17 @@ $(document).ready(function () {
 		$(this).parent().prev().children("p").hide();
 		$(this).parent().children(".btn_edit, .btn_del").hide();
 
+	});
+	//DELETE button
+	$(".btn_del").click(function () {
+		todoList.splice(parseInt($(this).closest("tr").children("td:first-child").text()), 1);
+		$("table tbody").empty();
+		$.each(todoList, function (i) {
+			delTbl += '<tr><td>' + (i + 1) + '</td><td><input type=\'checkbox\'></td><td><p>' + todoList[i] + '</p><input type=\"text\" class=\"edtTodos\"><input type=\"button\" class=\"btn btn-light ml-2 border-success edit_OK\" value=\"OK\"><input type=\"button\" class=\"btn btn-light ml-2 border-danger edit_cancel\" value=\"Cancel\"></td><td><input type=\"button\" class=\"btn btn-light ml-2 border-success btn_edit\" value=\"Edit\"><input type=\"button\" class=\"btn btn-light ml-2 border-danger btn_del\" value=\"Delete\"></td></tr>';
+		});
+		$("table tbody").append(delTbl);
+		$(".edit_OK, .edit_cancel").hide();
+		$(".edtTodos").hide();
 	});
 	//OK button in Edit form
 	$(".edit_OK").click(function () {
