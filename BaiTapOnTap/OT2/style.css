@@ -10,7 +10,7 @@ div.main {
 	margin: auto 20%;
 }
 
-div #addTDL{
+div #addTDL {
 	height: 150px;
 }
 
@@ -33,13 +33,23 @@ input.taskName {
 	width: 15%;
 }
 
-th:nth-of-type(4), td:nth-of-type(4) {
+th:nth-of-type(4),
+td:nth-of-type(4) {
 	text-align: right;
+	width: 40%;
 }
+
 /* .btn_edit, .btn_del {
 	width: 75%;
 } */
+th:nth-of-type(1),
+th:nth-of-type(2),
+td:nth-of-type(1),
+td:nth-of-type(2) {
+	width: 15%;
+}
+
 td input[type="text"] {
-	width: 50%;
+	width: 75%;
 	height: 35px;
 }
